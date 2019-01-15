@@ -1,0 +1,209 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "LED_S[0]",
+					"strict" : false
+				},
+				{
+					"name" : "LED_S[1]",
+					"strict" : false
+				},
+				{
+					"name" : "LED_S[2]",
+					"strict" : false
+				},
+				{
+					"name" : "LED_S[3]",
+					"strict" : false
+				},
+				{
+					"name" : "LED_S[4]",
+					"strict" : false
+				},
+				{
+					"name" : "LED_S[5]",
+					"strict" : false
+				},
+				{
+					"name" : "LED_S[6]",
+					"strict" : false
+				},
+				{
+					"name" : "LED_N[0]",
+					"strict" : false
+				},
+				{
+					"name" : "LED_N[1]",
+					"strict" : false
+				},
+				{
+					"name" : "LED_N[2]",
+					"strict" : false
+				},
+				{
+					"name" : "LED_N[3]",
+					"strict" : false
+				},
+				{
+					"name" : "LED_N[4]",
+					"strict" : false
+				},
+				{
+					"name" : "LED_N[5]",
+					"strict" : false
+				},
+				{
+					"name" : "LED_N[6]",
+					"strict" : false
+				},
+				{
+					"name" : "LED_K[0]",
+					"strict" : false
+				},
+				{
+					"name" : "LED_K[2]",
+					"strict" : false
+				},
+				{
+					"name" : "LED_K[3]",
+					"strict" : false
+				},
+				{
+					"name" : "LED_K[4]",
+					"strict" : false
+				},
+				{
+					"name" : "LED_K[5]",
+					"strict" : false
+				},
+				{
+					"name" : "LED_K[6]",
+					"strict" : false
+				},
+				{
+					"name" : "R_CHECK",
+					"strict" : false
+				},
+				{
+					"name" : "S_CHECK",
+					"strict" : false
+				},
+				{
+					"name" : "SPKR",
+					"strict" : false
+				},
+				{
+					"name" : "PSWITCH[23]",
+					"strict" : false
+				},
+				{
+					"name" : "PSWITCH[17]",
+					"strict" : false
+				},
+				{
+					"name" : "PSWITCH[18]",
+					"strict" : false
+				},
+				{
+					"name" : "PSWITCH[16]",
+					"strict" : false
+				},
+				{
+					"name" : "PSWITCH[20]",
+					"strict" : false
+				},
+				{
+					"name" : "PSWITCH[19]",
+					"strict" : false
+				},
+				{
+					"name" : "PSWITCH[21]",
+					"strict" : false
+				},
+				{
+					"name" : "PSWITCH[22]",
+					"strict" : false
+				},
+				{
+					"name" : "PSWITCH[10]",
+					"strict" : false
+				},
+				{
+					"name" : "PSWITCH[9]",
+					"strict" : false
+				},
+				{
+					"name" : "PSWITCH[12]",
+					"strict" : false
+				},
+				{
+					"name" : "PSWITCH[11]",
+					"strict" : false
+				},
+				{
+					"name" : "PSWITCH[13]",
+					"strict" : false
+				},
+				{
+					"name" : "PSWITCH[14]",
+					"strict" : false
+				},
+				{
+					"name" : "PSWITCH[0]",
+					"strict" : false
+				},
+				{
+					"name" : "PSWITCH[15]",
+					"strict" : false
+				},
+				{
+					"name" : "PSWITCH[3]",
+					"strict" : false
+				},
+				{
+					"name" : "PSWITCH[2]",
+					"strict" : false
+				},
+				{
+					"name" : "PSWITCH[5]",
+					"strict" : false
+				},
+				{
+					"name" : "PSWITCH[4]",
+					"strict" : false
+				},
+				{
+					"name" : "PSWITCH[6]",
+					"strict" : false
+				},
+				{
+					"name" : "PSWITCH[7]",
+					"strict" : false
+				},
+				{
+					"name" : "PSWITCH[1]",
+					"strict" : false
+				},
+				{
+					"name" : "PSWITCH[8]",
+					"strict" : false
+				},
+				{
+					"name" : "CLK",
+					"strict" : false
+				},
+				{
+					"name" : "RESETN",
+					"strict" : false
+				},
+				{
+					"name" : "STARTN",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

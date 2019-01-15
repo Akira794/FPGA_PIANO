@@ -1,0 +1,52 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_unsigned.all;
+
+entity PIANOALPHA is
+  port (
+    CLK    : in std_logic;
+    PSW : in std_logic_vector(7 downto 0);
+    RESETN : in std_logic;
+    SPKR   : out std_logic );
+end PIANOALPHA;
+
+architecture RTL of PIANOALPHA is
+  signal SW_OUT : std_logic_vector(7 downto 0);
+  signal SCALE_N: std_logic_vector(3 downto 0);
+  signal ENABLE_N : std_logic;
+
+  component ONESHOT port(
+      CLK   : in std_logic;
+      RESETN: in std_logic;
+      SWN   : in std_logic;
+      SWONEN: out std_logic );
+  end component;
+
+  component SCALE port(
+      PSW   : in std_logic_vector(7 downto 0);
+      SCALE_OUT : out std_logic_vector(3 downto 0);
+      ENABLE: out std_logic );
+  end component;
+
+  component BEEP port (
+    CLK      : in std_logic;
+    RESETN   : in std_logic;
+    SCALE_IN : in std_logic_vector(3 downto 0);
+    ENABLE   : in std_logic;
+    BEEPOUT  : out std_logic );
+  end component;
+
+  begin
+    SW0 : ONESHOT port map (CLK=>CLK, RESETN=>RESETN, SWN=>PSW(0), SWONEN=>SW_OUT(0));
+    SW1 : ONESHOT port map (CLK=>CLK, RESETN=>RESETN, SWN=>PSW(1), SWONEN=>SW_OUT(1));
+    SW2 : ONESHOT port map (CLK=>CLK, RESETN=>RESETN, SWN=>PSW(2), SWONEN=>SW_OUT(2));
+    SW3 : ONESHOT port map (CLK=>CLK, RESETN=>RESETN, SWN=>PSW(3), SWONEN=>SW_OUT(3));
+    SW4 : ONESHOT port map (CLK=>CLK, RESETN=>RESETN, SWN=>PSW(4), SWONEN=>SW_OUT(4));
+    SW5 : ONESHOT port map (CLK=>CLK, RESETN=>RESETN, SWN=>PSW(5), SWONEN=>SW_OUT(5));
+    SW6 : ONESHOT port map (CLK=>CLK, RESETN=>RESETN, SWN=>PSW(6), SWONEN=>SW_OUT(6));
+    SW7 : ONESHOT port map (CLK=>CLK, RESETN=>RESETN, SWN=>PSW(7), SWONEN=>SW_OUT(7));
+
+    S0  : SCALE port map(PSW=>SW_OUT, SCALE_OUT=>SCALE_N , ENABLE=>ENABLE_N );
+    B1  : BEEP  port map(CLK=>CLK, RESETN=>RESETN, SCALE_IN=>SCALE_N, ENABLE=>ENABLE_N, BEEPOUT=>SPKR);
+
+  end RTL;

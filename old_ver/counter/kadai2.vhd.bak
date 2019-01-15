@@ -1,0 +1,62 @@
+library ieee;
+use ieee.std_logic_1164.all;
+entity KADAI2 is
+  port (
+    CLK: in std_logic;
+    STARTN : in std_logic;
+    RESETN : in std_logic;
+    LEDL : out std_logic_vector(6 downto 0);
+    LEDH : out std_logic_vector(6 downto 0)
+  );
+end KADAI2;
+
+architecture RTL of KADAI2 is
+  signal K_ENABLE : std_logic;
+  signal K_COUNTING : std_logic;
+  signal K_STARTN   : std_logic;
+  signal K_COUNTL   : std_logic_vector(3 downto 0);
+  signal K_COUNTH   : std_logic_vector(3 downto 0);
+
+  component RATE port (
+      CLK      : in std_logic;
+      RESETN   : in std_logic;
+      COUNTING : in std_logic;
+      ENABLE   : out std_logic );
+  end component;
+
+  component COUNTER port (
+      CLK: in std_logic;
+      RESETN : in std_logic;
+      ENABLE : in std_logic;
+      COUNTING: in std_logic;
+      COUNTL : out std_logic_vector(3 downto 0);
+      COUNTH : out std_logic_vector(3 downto 0) );
+  end component;
+
+  component LEDDEC port (
+      DATA : in std_logic_vector(3 downto 0);
+      LEDOUT : out std_logic_vector(6 downto 0) );
+  end component;
+
+  component SWITCH port (
+      CLK : in std_logic;
+      RESETN : in std_logic;
+      STARTN : in std_logic;
+      COUNTING : out std_logic );
+  end component;
+
+  component ONESHOT port(
+      CLK   : in std_logic;
+      RESETN: in std_logic;
+      SWN   : in std_logic;
+      SWONEN: out std_logic );
+  end component;
+
+  begin
+    U0 : ONESHOT port map (CLK=>CLK, RESETN=>RESETN, SWN=>STARTN, SWONEN=>K_STARTN);
+    U1 : SWITCH port map (CLK=>CLK, RESETN=>RESETN, STARTN=>K_STARTN, COUNTING=>K_COUNTING);
+    U2 : RATE port map (CLK=>CLK, RESETN=>RESETN, ENABLE=>K_ENABLE, COUNTING=>K_COUNTING);
+    U3 : COUNTER port map (CLK=>CLK, RESETN=>RESETN, ENABLE=>K_ENABLE, COUNTING=>K_COUNTING,COUNTL=>K_COUNTL, COUNTH=>K_COUNTH);
+    U4 : LEDDEC port map (DATA=>K_COUNTL, LEDOUT=>LEDL);
+    U5 : LEDDEC port map (DATA=>K_COUNTH, LEDOUT=>LEDH);
+end RTL;

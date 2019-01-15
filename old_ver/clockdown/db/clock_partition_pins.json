@@ -1,0 +1,29 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "S_CHECK",
+					"strict" : false
+				},
+				{
+					"name" : "R_CHECK",
+					"strict" : false
+				},
+				{
+					"name" : "CLK",
+					"strict" : false
+				},
+				{
+					"name" : "RESETN",
+					"strict" : false
+				},
+				{
+					"name" : "STARTN",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

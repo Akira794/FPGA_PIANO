@@ -1,0 +1,53 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "SPKR",
+					"strict" : false
+				},
+				{
+					"name" : "PSWITCH[4]",
+					"strict" : false
+				},
+				{
+					"name" : "PSWITCH[5]",
+					"strict" : false
+				},
+				{
+					"name" : "PSWITCH[6]",
+					"strict" : false
+				},
+				{
+					"name" : "PSWITCH[7]",
+					"strict" : false
+				},
+				{
+					"name" : "PSWITCH[2]",
+					"strict" : false
+				},
+				{
+					"name" : "PSWITCH[3]",
+					"strict" : false
+				},
+				{
+					"name" : "PSWITCH[0]",
+					"strict" : false
+				},
+				{
+					"name" : "PSWITCH[1]",
+					"strict" : false
+				},
+				{
+					"name" : "CLK",
+					"strict" : false
+				},
+				{
+					"name" : "RESETN",
+					"strict" : false
+				}
+			]
+		}
+	]
+}
